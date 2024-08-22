@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        form{
+            max-width: fit-content;
+        }
+        #red{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        input[type="submit"]{
+                padding: 5px;
+                
+        }
+        
+    </style>
+</head>
+<body>
+   <div class="red">
+    <h2>Enter Marks </h2>
+    <form action="">
+       
+            <label for="eng">Eng</label>
+            <input type="number" name="eng" id="eng">
+            <br>
+            <label for="math">Math</label>
+            <input type="number" name="math" id="math">
+            <br>
+            <label for="sci">Science</label>
+            <input type="number" name="sci" id="sci">
+            <br>
+            <label for="bio">Biology</label>
+            <input type="number" name="bio" id="bio">
+            <br>
+            <input type="submit" onclick='printMarks()'>
+
+             <p id="totalmarks"></p>
+            
+    </form>
+
+   </div>
+    <script>
+        // form default vako xa vanne submit garda teslai event.preventdefault garnne 
+        function printMarks(){
+            event.preventDefault()
+            const eng = parseFloat(document.getElementById('eng').value) || 0
+            const math = parseFloat(document.getElementById('math').value) || 0
+            const sci = parseFloat(document.getElementById('sci').value) || 0
+            const bio = parseFloat(document.getElementById('bio').value) || 0
+            const sum = eng +math+sci+bio
+            alert =(sum)
+            const totalmarks = document.getElementById('totalmarks')
+            totalmarks.innerHTML="Your total mark is " +sum
+            }
+
+
+            
+            
+
+    </script>
+</body>
+</html>
